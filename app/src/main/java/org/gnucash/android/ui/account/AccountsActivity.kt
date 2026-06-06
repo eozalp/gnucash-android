@@ -114,6 +114,9 @@ class AccountsActivity : BaseDrawerActivity(),
                 INDEX_TOP_LEVEL_ACCOUNTS_FRAGMENT ->
                     AccountsListFragment.newInstance(AccountsListFragment.DisplayMode.TOP_LEVEL)
 
+                INDEX_CONSOLE_FRAGMENT ->
+                    ConsoleFragment.newInstance()
+
                 else -> AccountsListFragment.newInstance(AccountsListFragment.DisplayMode.TOP_LEVEL)
             }
         }
@@ -156,6 +159,7 @@ class AccountsActivity : BaseDrawerActivity(),
                 INDEX_RECENT_ACCOUNTS_FRAGMENT -> tab.setText(R.string.title_recent_accounts)
                 INDEX_TOP_LEVEL_ACCOUNTS_FRAGMENT -> tab.setText(R.string.title_all_accounts)
                 INDEX_FAVORITE_ACCOUNTS_FRAGMENT -> tab.setText(R.string.title_favorite_accounts)
+                INDEX_CONSOLE_FRAGMENT -> tab.setText(R.string.title_console)
             }
         }.attach()
 
@@ -367,9 +371,14 @@ class AccountsActivity : BaseDrawerActivity(),
         const val INDEX_FAVORITE_ACCOUNTS_FRAGMENT = 2
 
         /**
+         * Index of the console tab
+         */
+        const val INDEX_CONSOLE_FRAGMENT = 3
+
+        /**
          * Number of pages to show
          */
-        const val NUM_PAGES = 3
+        const val NUM_PAGES = 4
 
         /**
          * Used to save the index of the last open tab and restore the pager to that index
